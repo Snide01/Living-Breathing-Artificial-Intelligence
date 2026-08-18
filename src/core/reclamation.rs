@@ -1,0 +1,1 @@
+// reclamation.rs — HeartbeatPool 4-stage ephemeral: 1/144 gossip limiter discard at gossip -> Memory Map volatile flat overwrite latest -> 2016 epoch zero disk -> Merkle root only canonical JSON sorted keys SHA256

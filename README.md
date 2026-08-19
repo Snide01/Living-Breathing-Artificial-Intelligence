@@ -1,10 +1,10 @@
-# PROJECT NEXUS
-### A Self-Replicating, Self-Healing Blockchain with Evidence-First AI and Reclamation-Driven Economic Resilience
-**White Paper v0.35 — Locked Master: Sacred Geometry + Central Ohio Replacing + 60s Node Setup Ticker + All Sims + Treasury + Elastic + Physical Basket**
-
-**Author: Snide — August 2026**
-
----
+1 # PROJECT NEXUS
+2 **Genesis: Columbus Dispatch 18/Aug/2026 — Central Ohio data centers to consume 2GW while AI consensus is authority driven — Warehouses die, mycelium lives. Nexus takes first breath..**
+3 ### A Self-Replicating, Self-Healing Blockchain with Evidence-First AI and Reclamation-Driven Economic Resilience
+4 **White Paper v0.35 — Locked Master: Sacred Geometry + Central Ohio Replacing + 60s Node Setup Ticker + All Sims + Treasury + Elastic + Physical Basket — Constitution v1.3 Hardened Edge-Cases Closed**
+5 
+6 **Author: Snide — August 2026 — Alexandria, OH**
+7 **Constitution Hash: 6279b2a40c6d5893ceb797c8b8d20e071bff60e0dff317260d3ef81997e96dfe — Genesis Anchor**
 
 ### EXECUTIVE SUMMARY — LOCKED OPENING LINES v0.35
 

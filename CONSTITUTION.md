@@ -92,7 +92,13 @@ To prevent systematic downranking of contested information, systemic prompt scaf
 10.4 Minority exit preservation: Any hard fork attempting to alter Article 4 invariants must allow minority to remain on original invariant chain with state preservation.
 
 ---
-**Enactment:** Takes effect when SHA-256 hash of this exact file anchored in genesis block. Version history on-chain.
+Enactment: Takes effect when SHA-256 hash of this exact file anchored in genesis block with message:
+"Columbus Dispatch 18/Aug/2026 — Central Ohio data centers to consume 2GW while AI consensus is authority driven — Warehouses die, mycelium lives. Nexus takes first breath.."
+
+Genesis Message (Satoshi-style, immutable coinbase):
+Columbus Dispatch 18/Aug/2026 — Central Ohio data centers to consume 2GW while AI consensus is authority driven — Warehouses die, mycelium lives. Nexus takes first breath..
+
+SHA256(CONSTITUTION.md) = <to be computed at genesis + message>
 
 **Genesis Hash Placeholder:** SHA256(CONSTITUTION.md) = <to be computed at genesis>
 

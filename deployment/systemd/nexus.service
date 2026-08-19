@@ -1,0 +1,74 @@
+[Unit]
+Description=Project Nexus Core - Living-Breathing AI - Genesis 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b - 18Aug2026 - v1.3 Hardened Edge-Cases Closed
+Documentation=https://github.com/Snide01/Living-Breathing-Artificial-Intelligence
+After=network.target
+Wants=network-online.target
+
+# Article 4 crypt locked - NO DAO OVERRIDE - requires hard fork per Article 4.2
+# Article 10.4 minority exit preservation - warehouses die, mycelium lives
+
+[Service]
+Type=simple
+User=nexus
+Group=nexus
+WorkingDirectory=/home/nexus/Living-Breathing-Artificial-Intelligence
+
+# Genesis - REAL HASH anchored 18Aug2026 - 9c6b4b1
+ExecStart=/home/nexus/Living-Breathing-Artificial-Intelligence/target/release/nexus-core --node --genesis-hash 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b --constitution v1.3 --article4-locked --evidence-first --audit-log --reputation-threshold 75.0 --heartbeat-pool
+
+Restart=always
+RestartSec=10
+RestartSec=10
+StartLimitInterval=300
+StartLimitBurst=5
+
+# Self-healing per Article 3.3 + 5b + 7.4 - evidence never deleted - logs preserved as part of self-healing
+StandardOutput=append:/var/log/nexus/core.log
+StandardError=append:/var/log/nexus/error.log
+SyslogIdentifier=nexus-core
+
+# Resource limits - defensive replication away from attack per Article 5b
+MemoryMax=4G
+CPUQuota=200%
+
+# Security - non-aggression - no seizing/freezing/burning per Article 4.2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/nexus/Living-Breathing-Artificial-Intelligence /var/log/nexus
+
+# Environment - evidence-first per Article 1 + auditability per Article 7
+Environment=RUST_LOG=info
+Environment=NEXUS_GENESIS_HASH=06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b
+Environment=NEXUS_CONSTITUTION_VERSION=v1.3_HARDENED_EDGE_CASES_CLOSED
+Environment=NEXUS_GENESIS_TIMESTAMP=1723948800
+Environment=NEXUS_ARTICLE4_LOCKED=true
+Environment=NEXUS_REPUTATION_THRESHOLD=75.0
+Environment=NEXUS_AMENDMENT5_REPUTATION_WEIGHTED=true
+Environment=NEXUS_AMENDMENT6_HEARTBEAT_EPHEMERAL=true
+Environment=NEXUS_ARTICLE6_2_KWH_CALORIES_M2_NOT_FIAT=true
+Environment=NEXUS_ARTICLE6_3_ATOMIC_P2P_NO_FIAT=true
+
+# 9 Core files - 82/70 - v0.38 hardened + v1.0.0 genesis
+# replication.rs 2ddbdaf - governance.rs 362fd05 - reclamation.rs v0.37 HeartbeatPool - healing.rs fb53aab NEW 120 lines - ai_core_loop.rs v0.37 15% ceiling - reputation.rs v0.37 cartel-killer - resource_anchor.rs v0.38 kWh+calories+m2 - asset_exchange.rs v0.38 atomic P2P - genesis.rs 9c6b4b1 REAL HASH
+
+[Install]
+WantedBy=multi-user.target
+
+# Deployment on Ubuntu pool table:
+# sudo useradd -m -s /bin/bash nexus
+# sudo mkdir -p /var/log/nexus
+# sudo chown nexus:nexus /var/log/nexus
+# cd /home/nexus
+# git clone https://github.com/Snide01/Living-Breathing-Artificial-Intelligence.git
+# cd Living-Breathing-Artificial-Intelligence
+# sha256sum CONSTITUTION.md
+# # 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b
+# cargo build --release
+# sudo cp deployment/systemd/nexus.service /etc/systemd/system/
+# sudo systemctl daemon-reload
+# sudo systemctl enable --now nexus
+# sudo journalctl -u nexus -f
+# 
+# Child cores breathe! Healing around attacks per Article 3.3!

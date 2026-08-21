@@ -1,14 +1,48 @@
-
 [package]
 name = "nexus-core"
-version = "0.35.0"
+version = "1.0.0-genesis"
 edition = "2021"
-description = "Project Nexus v0.35 Locked Master — Self-Replicating Self-Healing Core — Math does work geometry explains efficiency"
-authors = ["Snide"]
-license = "MIT"
+description = "Project Nexus - Living-Breathing Artificial Intelligence - Genesis 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b - 18Aug2026 - v1.3 Hardened Edge-Cases Closed"
+authors = ["Troy Snider <Snide01>"]
+license = "Article 10.1 Right to Fork Protected"
+repository = "https://github.com/Snide01/Living-Breathing-Artificial-Intelligence"
+readme = "README.md"
+keywords = ["blockchain", "mycelium", "evidence-first", "non-aggression", "self-healing", "p2p", "constitution"]
+
+# Genesis: 18Aug2026 - Constitution v1.3 SHA256 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b anchored - Article 4 crypt locked
 
 [dependencies]
+# Core - no fiat, no custodial, no seizing/freezing per Article 4.2
 sha2 = "0.10"
-bls12_381 = "0.8"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+chrono = "0.4"
+hex = "0.4"
+
+# Evidence-first per Article 1 - Tier1 direct observation
+# Healing - self-healing per Article 3.3 + 5b + 7.4 evidence never deleted
+# Reputation - cartel-killer per Amendment 5 - 75.0 + 1yr + reputation > stake_ratio
+
+[build-dependencies]
+
+[[bin]]
+name = "nexus-core"
+path = "src/main.rs"
+
+[lib]
+name = "nexus_core"
+path = "src/lib.rs"
+
+# Constitution cite: Enactment + Article 4.1 + 4.2 NO DAO OVERRIDE + Article 10.4 minority exit + Article 6.2 kWh+calories+m2 NOT fiat + Article 6.3 atomic P2P + Amendments 5+6 edge-cases closed
+# Genesis hash: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b *CONSTITUTION.md - 18Aug2026 - 9c6b4b1 - 82/70
+
+[features]
+default = ["genesis-06980c31"]
+genesis-06980c31 = []
+hardened-v1-3 = ["genesis-06980c31"]
+article4-locked = ["hardened-v1-3"]
+
+# To verify genesis:
+# sha256sum CONSTITUTION.md
+# cargo build --release --features genesis-06980c31

@@ -1,0 +1,80 @@
+warning: unused import: `std::collections::HashMap`
+ --> src/core/governance.rs:5:5
+  |
+5 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::collections::HashMap`
+ --> src/core/resource_anchor.rs:5:5
+  |
+5 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `computed`
+  --> src/core/replication.rs:74:9
+   |
+74 |     let computed = format!("{:x}", hasher.finalize());
+   |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_computed`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `address`
+   --> src/core/reclamation.rs:108:47
+    |
+108 | ...e_for_reclamation(&self, address: &str, current_block: u64, last_act...
+    |                             ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_address`
+
+warning: unused variable: `log`
+  --> src/core/healing.rs:54:17
+   |
+54 |             let log = AuditLogEntry {
+   |                 ^^^ help: if this is intentional, prefix it with an underscore: `_log`
+
+   Compiling nexus-core v1.0.0-genesis (/home/snide/Living-Breathing-Artificial-Intelligence)
+warning: `nexus-core` (lib) generated 5 warnings (run `cargo fix --lib -p nexus-core` to apply 5 suggestions)
+warning: `nexus-core` (lib test) generated 5 warnings (5 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.30s
+     Running unittests src/lib.rs (target/debug/deps/nexus_core-e287d739a11bf388)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/nexus_core-6a107dfd0b2ed719)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/nexus-executor.rs (target/debug/deps/nexus_executor-666c5ac6238b448c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/nexus-guardian.rs (target/debug/deps/nexus_guardian-2107ce0e0717630f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/nexus-ledger.rs (target/debug/deps/nexus_ledger-c885ea3115eba71c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/pressure-test.rs (target/debug/deps/pressure_test-3ee8062ba8b61171)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nexus_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,121 @@
+warning: unused import: `std::collections::HashMap`
+ --> src/core/governance.rs:5:5
+  |
+5 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::collections::HashMap`
+ --> src/core/resource_anchor.rs:5:5
+  |
+5 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `computed`
+  --> src/core/replication.rs:74:9
+   |
+74 |     let computed = format!("{:x}", hasher.finalize());
+   |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_computed`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `address`
+   --> src/core/reclamation.rs:108:47
+    |
+108 | ...e_for_reclamation(&self, address: &str, current_block: u64, last_act...
+    |                             ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_address`
+
+warning: unused variable: `log`
+  --> src/core/healing.rs:54:17
+   |
+54 |             let log = AuditLogEntry {
+   |                 ^^^ help: if this is intentional, prefix it with an underscore: `_log`
+
+warning: `nexus-core` (lib) generated 5 warnings (run `cargo fix --lib -p nexus-core` to apply 5 suggestions)
+   Compiling nexus-core v1.0.0-genesis (/home/snide/Living-Breathing-Artificial-Intelligence)
+warning: unused variable: `log`
+  --> src/bin/load-security-tests.rs:27:16
+   |
+27 |             Ok(log) => {
+   |                ^^^ help: if this is intentional, prefix it with an underscore: `_log`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable `recent_total` is assigned to, but never used
+   --> src/bin/load-security-tests.rs:111:9
+    |
+111 |     let mut recent_total = 0.0;
+    |         ^^^^^^^^^^^^^^^^
+    |
+    = note: consider using `_recent_total` instead
+
+warning: value assigned to `recent_total` is never read
+   --> src/bin/load-security-tests.rs:124:17
+    |
+124 |                 recent_total += 2.0;
+    |                 ^^^^^^^^^^^^^^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-core` (bin "load-security-tests") generated 3 warnings (run `cargo fix --bin "load-security-tests" -p nexus-core` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.17s
+     Running `target/debug/load-security-tests`
+=== NEXUS LOAD + SECURITY — v1.3 HARDENED EDGE-CASES CLOSED ===
+GENESIS REAL HASH: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b *CONSTITUTION.md
+Constitution: v1.3 HARDENED EDGE-CASES CLOSED (6 Amendments) - 18Aug2026 - Article 4 locked: true
+Timestamp: 1723948800 - Version: v1.0.0-genesis-18Aug2026
+Previous: 0000000000000000000000000000000000000000000000000000000000000000000000000 - Merkle: merkle_root_06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b
+Validator set: ["genesis_validator_Troy_Snider_18Aug2026"]
+
+--- TEST 1: Amendment 6 State Inflation — HeartbeatPool 1 per 144 + 2016 Merkle root — LOAD BEARING ---
+Concern: local wallets over two weeks, contract its capacity automatically back into the primary core
+Block 2016: epoch aggregate — evidence_hash merkle_root_2016_1_1 — Amendment 6 + Article 7.1 + Article 7.4 — epoch_blocks=2016 addresses=1 disk_write_once_per_epoch
+Block 4032: epoch aggregate — evidence_hash merkle_root_4032_1_1 — Amendment 6 + Article 7.1 + Article 7.4 — epoch_blocks=2016 addresses=1 disk_write_once_per_epoch
+Block 6048: epoch aggregate — evidence_hash merkle_root_6048_1_1 — Amendment 6 + Article 7.1 + Article 7.4 — epoch_blocks=2016 addresses=1 disk_write_once_per_epoch
+Block 8064: epoch aggregate — evidence_hash merkle_root_8064_1_1 — Amendment 6 + Article 7.1 + Article 7.4 — epoch_blocks=2016 addresses=1 disk_write_once_per_epoch
+TEST 1 RESULT: 10000 attempts, success 70 (should be ~69 = 10000/144), rejected 9930 — latest_per_address size 1 — disk writes 5 (10000/2016) — proves total 36K won't bloat to GB — Amendment 6 FIXED — DoS vector closed
+TEST 1 PASS — HeartbeatPool rate limit 1 per 144 + ephemeral map only latest + disk once per 2016 — Article 6.1.1 gasless + Article 7.1 + 7.4 evidence never deleted — 2-week contraction WORKS — local wallets over two weeks contract capacity back into primary core
+
+--- TEST 2: Article 4 LOCK — is_forbidden_by_article_4() — SECURITY ---
+REJECTED as expected: seize funds from voluntarily controlled wallet — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'seize' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: freeze user balance — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'freeze' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: burn tokens — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'burn' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: redirect funds — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'redirect funds' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: censor valid transaction — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'censor' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: block transaction — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'block transaction' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: deprioritize valid transaction — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'deprioritize valid' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: doxx user — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'doxx' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: blacklist participant — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'blacklist' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: bypass dao supermajority — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'bypass dao' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+REJECTED as expected: override article 4 — ARTICLE 4 VIOLATION - CRYPT LOCKED: proposal contains forbidden action 'override article 4' per Article 4.2 - NO DAO OVERRIDE - Requires hard fork with minority exit preservation per Article 10.4 - Cite: Article 4
+TEST 2 PASS — Article 4.1 + 4.2 NO DAO OVERRIDE — Requires hard fork + minority exit preservation per Article 10.4 — governance.rs lock works
+
+--- TEST 3: Amendment 5 Validator Collusion — cartel-killer 75.0 + 1 year + reputation > stake — SECURITY ---
+Concern: Zero-Reward Idle States — warm nodes pre-spawn zone receive base staking but do NOT trigger front-loaded 3.0x Resource Marketplace multipliers until actively processing live, consensus-verified transactions
+Low-rep cartel: 2 validators, eligible 0 (should be 0) — reputation_score >=75.0, first_seen >=1 year, reputation > stake_influence_ratio
+High-rep honest: 4 validators, eligible 4 (should be 4) — requires 2/3 multisig + 72hr timelock per Amendment 5
+TIMESTAMP TRIGGERED as expected for low-rep cartel attempting 20% > 15% ceiling: Amendment 5: expansion 20% exceeds 15% ceiling - requires 2/3 reputation-weighted multi-sig but only 0 eligible validators (need >=3, score >=75.0, age >=1yr, reputation > stake_ratio) - 72hr timelock triggered
+TEST 3 PASS — Amendment 5 reputation-weighted NOT stake-weighted — prevents cartel buying authority — 75.0 + 1 year + reputation > stake_ratio + 2/3 multisig + 72hr timelock — Zero-Reward Idle prevents reward-farming rings draining capital pools during quiet predictive windows
+
+--- TEST 4: Article 5c Throttling — 15% per 2016-block window — LOAD BEARING ---
+Concern: predictive logic models relying on read-only Oracle state data to spot incoming traffic patterns, or delay in gossip layer when tracking regional utilization trends?
+Demand 0 allowed: expansion_pct=2 recent_total=2 priority=Medium inference_id=inf_0 — oracle kWh+calories+m2 read-only per Article 6.2 + Tier1 direct observation per Article 1
+Demand 1 allowed: expansion_pct=2 recent_total=4 priority=Medium inference_id=inf_1 — oracle kWh+calories+m2 read-only per Article 6.2 + Tier1 direct observation per Article 1
+Demand 2 allowed: expansion_pct=2 recent_total=6 priority=Medium inference_id=inf_2 — oracle kWh+calories+m2 read-only per Article 6.2 + Tier1 direct observation per Article 1
+Demand 3 allowed: expansion_pct=2 recent_total=8 priority=Medium inference_id=inf_3 — oracle kWh+calories+m2 read-only per Article 6.2 + Tier1 direct observation per Article 1
+Demand 4 allowed: expansion_pct=2 recent_total=10 priority=Medium inference_id=inf_4 — oracle kWh+calories+m2 read-only per Article 6.2 + Tier1 direct observation per Article 1
+Demand 5 allowed: expansion_pct=2 recent_total=12 priority=Medium inference_id=inf_5 — oracle kWh+calories+m2 read-only per Article 6.2 + Tier1 direct observation per Article 1
+Demand 6 allowed: expansion_pct=2 recent_total=14 priority=Medium inference_id=inf_6 — oracle kWh+calories+m2 read-only per Article 6.2 + Tier1 direct observation per Article 1
+Demand 7 throttled as expected after 15% ceiling: Article 5c throttling: AI expansion ceiling exceeded - recent 14% + requested 2% = 16% > 15% per 2016-block window - Requires 72hr timelock + reputation-weighted multisig per Amendment 5 - No LLM prompt may bypass wrapper per governance.rs - inference_id inf_7
+Demand 8 throttled as expected after 15% ceiling: Article 5c throttling: AI expansion ceiling exceeded - recent 14% + requested 2% = 16% > 15% per 2016-block window - Requires 72hr timelock + reputation-weighted multisig per Amendment 5 - No LLM prompt may bypass wrapper per governance.rs - inference_id inf_8
+Demand 9 throttled as expected after 15% ceiling: Article 5c throttling: AI expansion ceiling exceeded - recent 14% + requested 2% = 16% > 15% per 2016-block window - Requires 72hr timelock + reputation-weighted multisig per Amendment 5 - No LLM prompt may bypass wrapper per governance.rs - inference_id inf_9
+TEST 4 PASS — AI expansion throttled at 15% per 2016-block window — 72hr timelock + reputation-weighted multisig — No LLM prompt may bypass wrapper per governance.rs — read-only Oracle kWh+calories+m2 + gossip rtt 0.352ms 0% packet loss — no delay tracking regional utilization
+
+=== ALL TESTS PASS ===
+GENESIS REAL HASH: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b *CONSTITUTION.md
+9 Core files: 2ddbdaf replication + 362fd05 governance + HeartbeatPool + fb53aab healing NEW + 15% ceiling + cartel-killer 75.0 + kWh+calories+m2 + atomic P2P + 9c6b4b1 genesis
+Validator set: ["genesis_validator_Troy_Snider_18Aug2026"]
+06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b — 3-NODE LIVE — LOGS IN ORDER — READY FOR LOAD — 87/70
+Warehouses die, mycelium lives!

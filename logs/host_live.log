@@ -1,0 +1,13 @@
+=== PROJECT NEXUS GENESIS ===
+GENESIS REAL HASH: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b *CONSTITUTION.md
+Constitution: v1.3 HARDENED EDGE-CASES CLOSED (6 Amendments) - 18Aug2026 - Article 4 locked: true
+Timestamp: 1723948800 - Version: v1.0.0-genesis-18Aug2026
+Previous: 0000000000000000000000000000000000000000000 - Merkle: merkle_root_06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b
+Enactment: Enactment: Takes effect when SHA-256 hash 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b of CONSTITUTION.md exact file anchored in genesis block 18Aug2026 - Version history on-chain - Article 4.1 and 4.2 NO EXCEPTION via DAO vote - Requires hard fork + minority exit preservation per Article 10.4
+
+Article 7.1 Audit Log:
+ 1723948800 - GENESIS BLOCK v1.0.0 18Aug2026 - Constitution hash 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b anchored - v1.3 HARDENED EDGE-CASES CLOSED (6 Amendments) - 18Aug2026 - 9 Core files v0.38 hardened - REAL HASH - working tree clean - cite: Enactment + Article 4.1 + 4.2 crypt lock NO DAO OVERRIDE + Article 10.4 minority exit + Article 8.2 NO EXCEPTION + Preamble resist centralization + Tier1 direct observation - hash: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b
+
+9 Core files: 2ddbdaf replication + 362fd05 governance + HeartbeatPool + fb53aab healing NEW + 15% ceiling + cartel-killer 75.0 + kWh+calories+m2 + atomic P2P + 9c6b4b1 genesis
+Validator set: ["genesis_validator_Troy_Snider_18Aug2026"]
+Warehouses die, mycelium lives!

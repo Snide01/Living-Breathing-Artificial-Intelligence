@@ -1,0 +1,51 @@
+warning: unused import: `std::collections::HashMap`
+ --> src/core/governance.rs:5:5
+  |
+5 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::collections::HashMap`
+ --> src/core/resource_anchor.rs:5:5
+  |
+5 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `computed`
+  --> src/core/replication.rs:74:9
+   |
+74 |     let computed = format!("{:x}", hasher.finalize());
+   |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_computed`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `address`
+   --> src/core/reclamation.rs:108:47
+    |
+108 | ...e_for_reclamation(&self, address: &str, current_block: u64, last_act...
+    |                             ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_address`
+
+warning: unused variable: `log`
+  --> src/core/healing.rs:54:17
+   |
+54 |             let log = AuditLogEntry {
+   |                 ^^^ help: if this is intentional, prefix it with an underscore: `_log`
+
+warning: `nexus-core` (lib) generated 5 warnings (run `cargo fix --lib -p nexus-core` to apply 5 suggestions)
+   Compiling nexus-core v1.0.0-genesis (/home/snide/Living-Breathing-Artificial-Intelligence)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running `target/debug/real-load`
+=== REAL LOAD — 200 TPS 80-20 @1000 — kWh+calories+m2 — 2GW gas vs 10MB mycelium ===
+0 processed — elapsed 0.0s — target 200 TPS @1000 — 4.86x margin
+1000 processed — elapsed 5.1s — target 200 TPS @1000 — 4.86x margin
+2000 processed — elapsed 10.3s — target 200 TPS @1000 — 4.86x margin
+3000 processed — elapsed 15.4s — target 200 TPS @1000 — 4.86x margin
+4000 processed — elapsed 20.5s — target 200 TPS @1000 — 4.86x margin
+5000 processed — elapsed 25.6s — target 200 TPS @1000 — 4.86x margin
+6000 processed — elapsed 30.8s — target 200 TPS @1000 — 4.86x margin
+7000 processed — elapsed 35.9s — target 200 TPS @1000 — 4.86x margin
+8000 processed — elapsed 41.0s — target 200 TPS @1000 — 4.86x margin
+9000 processed — elapsed 46.2s — target 200 TPS @1000 — 4.86x margin
+REAL LOAD DONE — 10000 @ 200 TPS @1000 — elapsed 51.3s — avg TPS 195.0 — N=3 shards capacity 600.0 margin 1.71x
+GENESIS REAL HASH: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b — 3-NODE LIVE — READY FOR LOAD — 87/70 — Warehouses die, mycelium lives!

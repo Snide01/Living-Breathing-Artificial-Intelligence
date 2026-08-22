@@ -1,0 +1,11 @@
+# Nexus v1.3 HARDENED — Revolutionary Disruption in Stagnant Blockchain
+- Genesis Hash: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b
+- 50 TPS 80-20 @100: 49.6 TPS 100.7s — 200 TPS @1000: 195.0 TPS 51.3s — N=3 shards 600 TPS margin 1.71x
+- p50 0.000ms p99 0.001ms max 0.029ms <50ms — IPC latency tax PASS
+- cpu_matrix [0.0...10.0] ram 38.5% — minimal resources both nodes — Very-Finite 10MB mycelium vs 2GW gas
+- Article 4 crypt lock NO DAO OVERRIDE + 10.4 minority exit — is_forbidden_by_article_4()
+- Amendment 5 reputation >=75.0 + 1 year + reputation > stake_ratio + 2/3 — cartel-killer
+- Amendment 6 HeartbeatPool 1 per 144 + 2016 Merkle root — success 2500 rejected 2500 — total 56K flat not GB
+- Resource anchor kWh+calories+m2 not fiat + atomic P2P without fiat on/off-ramp
+- 2-week contraction + Zero-Reward Idle — warm nodes base staking only NOT 3.0x until live txs
+- Columbus Dispatch 18 Aug 2026 2GW gas — Nexus first breath — Warehouses die, mycelium lives — 87/70

@@ -1,9 +1,14 @@
 {
   "constitution_hash": "45a12ef3ebcf0066c5322c6c1530c38a7e34fa14435f154f55ad801a154ae514",
   "constitution_version": "v1.4",
-  "prior_hash_retired": "06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b",
+  "design_horizon": "10yr embodiment falsifiable x10 succession = 100yr lineage, x100 = 1000yr via succession per 10.6.4 — not permanent runtime",
   "genesis_root_note": "root of trust per Article 10.6.4 — sorted-key canonicalization",
-  "horizon_blocks": 5256000,
-  "design_horizon": "100yr embodiment x10 succession = 1000yr lineage — not permanent runtime",
-  "permanent_invariants": ["Evidence-First", "NAP", "minority_exit", "cryptographic_anchoring"]
+  "horizon_blocks": 525600,
+  "permanent_invariants": [
+    "Evidence-First",
+    "NAP",
+    "minority_exit",
+    "cryptographic_anchoring"
+  ],
+  "prior_hash_retired": "06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b"
 }

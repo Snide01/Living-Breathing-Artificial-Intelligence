@@ -1,5 +1,5 @@
 {
-  "constitution_hash": "1eeaaa324719ef13195c45edc7c2c3e5f9ab86da8ddea4ba3975b62ecb8499bb",
+  "constitution_hash": "45a12ef3ebcf0066c5322c6c1530c38a7e34fa14435f154f55ad801a154ae514",
   "constitution_version": "v1.4",
   "prior_hash_retired": "06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b",
   "genesis_root_note": "root of trust per Article 10.6.4 — sorted-key canonicalization",

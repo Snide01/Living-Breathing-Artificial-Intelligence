@@ -71,7 +71,7 @@ pub fn validate_performance_driven(trigger: &ReplicationTrigger) -> Result<Audit
     // Verify proof hash matches metrics
     let mut hasher = Sha256::new();
     hasher.update(format!("{}{}{}", trigger.metrics.latency_before_ms, trigger.metrics.latency_after_ms, trigger.metrics.tps_after));
-    let computed = format!("{:x}", hasher.finalize());
+    let _computed = format!("{:x}", hasher.finalize());
     // In production: verify computed == proof_hash with evidence file
     
     Ok(AuditLogEntry {

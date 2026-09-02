@@ -2,7 +2,6 @@
 // Constitution: v1.3 Hardened Edge-Cases Closed - Articles 4, 5c, 7, 8
 // Amendment 5: reputation-weighted NOT stake-weighted multi-sig for AI expansion >15%
 
-use std::collections::HashMap;
 
 pub const REPUTATION_THRESHOLD: f64 = 75.0;
 pub const MIN_VALIDATOR_AGE_BLOCKS: u64 = 52560; // ~1 year in blocks

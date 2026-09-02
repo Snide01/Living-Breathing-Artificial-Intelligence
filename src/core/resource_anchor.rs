@@ -2,7 +2,6 @@
 // Constitution: v1.3 Hardened - Articles 6.2, 1, 2, 7 - NOT FIAT - per-person kWh, calories, m2
 // Token value anchor is per-person consumption of energy, calories, housing - Oracle sources evidence-first
 
-use std::collections::HashMap;
 
 #[derive(Debug, Clone)]
 pub struct ResourceQuote {

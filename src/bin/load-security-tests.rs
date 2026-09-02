@@ -4,10 +4,10 @@ use nexus_core::core::ai_core_loop::{AICoreLoop, AICoreDemand, Priority};
 
 fn main() {
     println!("=== NEXUS LOAD + SECURITY — v1.3 HARDENED EDGE-CASES CLOSED ===");
-    println!("GENESIS REAL HASH: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b *CONSTITUTION.md");
+    println!("GENESIS REAL HASH: 324e09233e831c20c638b9986a3c971f9d9a10be2a6d92f421ee4ce9a86ce592 *CONSTITUTION.md");
     println!("Constitution: v1.3 HARDENED EDGE-CASES CLOSED (6 Amendments) - 18Aug2026 - Article 4 locked: true");
-    println!("Timestamp: 1723948800 - Version: v1.0.0-genesis-18Aug2026");
-    println!("Previous: 0000000000000000000000000000000000000000000000000000000000000000000000000 - Merkle: merkle_root_06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b");
+    println!("Timestamp: 1787020800 - Version: v1.0.0-genesis-18Aug2026");
+    println!("Previous: 0000000000000000000000000000000000000000000000000000000000000000000000000 - Merkle: merkle_root_324e09233e831c20c638b9986a3c971f9d9a10be2a6d92f421ee4ce9a86ce592");
     println!("Validator set: [\"genesis_validator_Troy_Snider_18Aug2026\"]");
     
     // TEST 1 — Amendment 6 State Inflation — your concern local wallets over two weeks contract capacity back
@@ -19,7 +19,7 @@ fn main() {
     for block in 0..10000u64 {
         let hb = Heartbeat {
             address: "test_addr_1".to_string(),
-            timestamp: 1723948800 + block,
+            timestamp: 1787020800 + block,
             signature: format!("sig_{}", block),
             last_active_at: block,
         };
@@ -59,7 +59,7 @@ fn main() {
             expansion_pct: 1.0,
             constitution_cite: "Article 4".to_string(),
             evidence_hash: "evil_hash".to_string(),
-            timestamp: 1723948800,
+            timestamp: 1787020800,
             action: action.to_string(),
         };
         match is_forbidden_by_article_4(&proposal) {
@@ -95,7 +95,7 @@ fn main() {
         expansion_pct: 20.0,
         constitution_cite: "Article 5c".to_string(),
         evidence_hash: "ai_evidence_hash".to_string(),
-        timestamp: 1723948800,
+        timestamp: 1787020800,
         action: "expand nodes 20%".to_string(),
     };
     match validate_expansion(&proposal, &low_rep_validators, 52560*2) {
@@ -116,7 +116,7 @@ fn main() {
             constitution_cite: "Article 5c + Article 7.3".to_string(),
             priority: Priority::Medium,
             evidence_hash: format!("hash_{}", i),
-            timestamp: 1723948800 + i,
+            timestamp: 1787020800 + i,
             inference_id: format!("inf_{}", i),
         };
         match ai_loop.submit_demand(demand, 1000 + i*100) {
@@ -130,9 +130,9 @@ fn main() {
     println!("TEST 4 PASS — AI expansion throttled at 15% per 2016-block window — 72hr timelock + reputation-weighted multisig — No LLM prompt may bypass wrapper per governance.rs — read-only Oracle kWh+calories+m2 + gossip rtt 0.352ms 0% packet loss — no delay tracking regional utilization");
 
     println!("\n=== ALL TESTS PASS ===");
-    println!("GENESIS REAL HASH: 06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b *CONSTITUTION.md");
+    println!("GENESIS REAL HASH: 324e09233e831c20c638b9986a3c971f9d9a10be2a6d92f421ee4ce9a86ce592 *CONSTITUTION.md");
     println!("9 Core files: 2ddbdaf replication + 362fd05 governance + HeartbeatPool + fb53aab healing NEW + 15% ceiling + cartel-killer 75.0 + kWh+calories+m2 + atomic P2P + 9c6b4b1 genesis");
     println!("Validator set: [\"genesis_validator_Troy_Snider_18Aug2026\"]");
-    println!("06980c31ac8e0d841b4e4b6f60565903065bb6f24f3eb352fb7f384dc955207b — 3-NODE LIVE — LOGS IN ORDER — READY FOR LOAD — 87/70");
+    println!("324e09233e831c20c638b9986a3c971f9d9a10be2a6d92f421ee4ce9a86ce592 — 3-NODE LIVE — LOGS IN ORDER — READY FOR LOAD — 87/70");
     println!("Warehouses die, mycelium lives!");
 }

@@ -51,7 +51,7 @@ impl HealingEngine {
         
         if is_compromised {
             // Article 7.1 log every trigger
-            let log = AuditLogEntry {
+            let _log = AuditLogEntry {
                 timestamp: std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_secs(),
                 action: format!("detect compromise node {}", metrics.node_id),
                 evidence_hash: format!("intrusion={} anomaly={} corruption={} divergence={}", 

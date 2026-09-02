@@ -105,7 +105,7 @@ impl HeartbeatPool {
     }
     
     // Article 6.1: Reclamation check - 5-year inactivity
-    pub fn is_eligible_for_reclamation(&self, address: &str, current_block: u64, last_active_block: u64) -> bool {
+    pub fn is_eligible_for_reclamation(&self, _address: &str, current_block: u64, last_active_block: u64) -> bool {
         current_block.saturating_sub(last_active_block) >= INACTIVITY_THRESHOLD_BLOCKS
     }
     

@@ -46,3 +46,11 @@ article4-locked = ["hardened-v1-3"]
 # To verify genesis:
 # sha256sum CONSTITUTION.md
 # cargo build --release --features genesis-06980c31
+
+[[bin]]
+name = "nexus-mesh"
+path = "src/bin/nexus-mesh.rs"
+
+[[bin]]
+name = "nexus-witness"
+path = "src/bin/nexus-witness.rs"

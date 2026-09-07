@@ -1,0 +1,3 @@
+18da4eaa136adc2dd573cc459c08eb5ff86ee600b84486ebc95cc7d8f76ad41c  target/release/nexus-mesh
+ddb37aa0d066477c6c5f1ecff2c82cc184d3fd17c58cddb4e45454fbb3a7d030  target/release/nexus-core
+REBREATHED Sun Sep  6 10:12:50 PM EDT 2026 18da4eaa 0aa2ca47 ddb37aa0 525600 45a12ef3 3-NODE LIVE PID 572728 agg .241 WITNESS2 .154 PID52971 4d WITNESS3 .36

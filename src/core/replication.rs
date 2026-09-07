@@ -100,3 +100,14 @@ pub fn spawn_child_core(trigger: ReplicationTrigger) -> Result<AuditLogEntry, St
     // Logs preserved per healing.rs per Article 7.4 - evidence never deleted
     Ok(log)
 }
+
+// v0.88 PendingBuffer integration — forces hash change + Gate4 test
+use crate::shared::{PendingBuffer, PendingEvent, QC_INTERVAL_BLOCKS};
+
+pub fn pending_buffer_gate4_test() -> crate::shared::HandoffCert {
+    let mut buf = PendingBuffer::new();
+    let _ = buf.push(PendingEvent::Tx { seq: 105, hash: "tx105".into(), payload: vec![1,2,3] });
+    let _ = buf.push(PendingEvent::Reclamation { seq: 106, heartbeat_id: "hb106".into(), witness_sig: "sig106".into() });
+    let _ = buf.push(PendingEvent::AiInference { seq: 107, request_id: 42, partial: vec![4,5,6] });
+    buf.freeze_for_handoff(1, "state_root_525600", "ddb37aa0d066477c6c5f1ecff2c82cc184d3fd17c58cddb4e45454fbb3a7d030")
+}

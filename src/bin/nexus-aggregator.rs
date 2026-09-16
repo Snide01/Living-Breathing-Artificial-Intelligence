@@ -1,6 +1,17 @@
 use std::net::{TcpListener, TcpStream};
 use std::io::{BufRead, BufReader};
 use std::thread;
+use std::path::PathBuf;
+use std::fs;
+
+fn bone_save(genesis_hash: &str, blocks: u64) {
+    let home = std::env::var("HOME").unwrap_or("/home/snide".to_string());
+    let p = PathBuf::from(format!("{}/.nexus/aggregator_state.json", home));
+    let _ = fs::create_dir_all(p.parent().unwrap());
+    let data = format!(r#"{{"genesis":"{}","blocks_left":525600,"blocks":{}, "bone_anchor":true, "ts":{}}}"#, genesis_hash, blocks, chrono::Utc::now().timestamp());
+    let _ = fs::write(&p, &data);
+    println!("[BONE AGG] Saved {} = {}", p.display(), data);
+}
 
 fn main() {
     let genesis_str = std::fs::read_to_string("genesis.json").unwrap_or("{}".to_string());
@@ -11,18 +22,18 @@ fn main() {
         .ok().and_then(|v| v.get("horizon_blocks").and_then(|h| h.as_u64()))
         .unwrap_or(525600);
 
+    bone_save(&genesis_hash, blocks);
+
     println!("=== PROJECT NEXUS GENESIS ===");
     println!("GENESIS REAL HASH: {} *CONSTITUTION.md", genesis_hash);
-    println!("Version: v1.4-TRUE-525600-10yr-{} blocks_left={}", &genesis_hash[0..8], blocks);
+    println!("Version: v1.4-TRUE-525600-10yr-{} blocks_left={}", &genesis_hash[..genesis_hash.len().min(8)], blocks);
     println!("Warehouses die, mycelium lives!");
     println!("[AGGREGATOR] LISTEN 0.0.0.0:30303 genesis={} blocks={}", genesis_hash, blocks);
 
     let listener = TcpListener::bind("0.0.0.0:30303").expect("bind 30303");
     for stream in listener.incoming() {
         match stream {
-            Ok(s) => {
-                thread::spawn(move || handle(s));
-            }
+            Ok(s) => { thread::spawn(move || handle(s)); }
             Err(e) => eprintln!("accept err {}", e),
         }
     }
@@ -33,9 +44,8 @@ fn handle(stream: TcpStream) {
     let reader = BufReader::new(stream);
     for line in reader.lines().flatten() {
         println!("[AGGREGATOR] From {}: {}", peer, line);
-        // simple validation
         if !line.contains("525600") {
-            eprintln!("[AGGREGATOR] WARN {} genesis mismatch blocks_left !=525600", peer);
+            eprintln!("[AGGREGATOR] WARN {} genesis mismatch", peer);
         }
     }
 }

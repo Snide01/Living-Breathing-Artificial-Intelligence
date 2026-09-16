@@ -15,5 +15,5 @@ fn main() {
         if i % 1000 == 0 { println!("{} processed — elapsed {:.1}s — target {} TPS @{} — 4.86x margin", i, start.elapsed().as_secs_f64(), target_tps, addrs); }
     }
     println!("REAL LOAD DONE — 10000 @ {} TPS @{} — elapsed {:.1}s — avg TPS {:.1} — N=3 shards capacity {:.1} margin {:.2}x", target_tps, addrs, start.elapsed().as_secs_f64(), 10000.0/start.elapsed().as_secs_f64(), 200.0*3.0, (200.0*3.0)/350.0);
-    println!("GENESIS REAL HASH: 324e09233e831c20c638b9986a3c971f9d9a10be2a6d92f421ee4ce9a86ce592 — 3-NODE LIVE — READY FOR LOAD — 87/70 — Warehouses die, mycelium lives!");
+    println!("GENESIS REAL HASH: 45a12ef3ebcf0066c5322c6c1530c38a7e34fa14435f154f55ad801a154ae514 — 5-NODE LIVE — READY FOR LOAD — 87/70 — Warehouses die, mycelium lives!");
 }

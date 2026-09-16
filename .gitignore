@@ -1,2 +1,10 @@
 /target/
-Cargo.lock
+Cargo.lockHEARTBEAT.log
+*.log
+PRE_BLACKOUT*
+blackout_*
+logs/
+aggregator.log
+aggregator_*.log
+MESH_HASH.txt.bak.*
+src/bin/mesh-bone.rs
